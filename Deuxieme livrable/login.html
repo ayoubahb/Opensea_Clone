@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./css/all.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+			<div class="container">
+				<a class="logo me-5" href=""><img src="./img/logo.png" alt="" /></a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavDropdown"
+					aria-controls="navbarNavDropdown"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+          <i class="fa-solid fa-bars text-light fa-xl"></i>
+				</button>
+				<div class="collapse navbar-collapse ms-5 justify-content-between " id="navbarNavDropdown">
+					<ul class="navbar-nav my-3">
+						<li class="nav-item ">
+							<a class="nav-link active ttl" aria-current="page" href="./index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link ttl" href="./collection.html">Collections</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link ttl" href="./nfts.html">NFTs</a>
+						</li>
+					</ul>
+          <a href="login.php">
+            <button class="main-btn">login</button>
+          </a>
+				</div>
+			</div>
+		</nav>
+		<div class="wrapper">
+			<div id="formContent">
+				<h2>Login</h2>
+				<!-- Login Form -->
+				<form>
+					<div>
+						<label>Email</label>
+						<i class="fa-solid fa-user fa-lg"></i>
+						<input type="text" id="login" class="fadeIn second" placeholder="Type your email" name="login" />
+					</div>
+					<div>
+						<label>Password</label>
+						<i class="fa-solid fa-key fa-lg"></i>
+						<input
+							type="password"
+							id="password"
+							class="fadeIn third"
+              placeholder="Type your password"
+							name="login"
+						/>
+					</div>
+					<button
+						class="main-btn"
+						type="submit"
+						class="fadeIn fourth"
+						value="Log In"
+					>
+						Login
+					</button>
+				</form>
+				<div id="formFooter">
+					<a href="cre_acc.php">Create accounte</a>
+				</div>
+			</div>
+		</div>
+		<script src="./js/bootstrap.bundle.min.js"></script>
+		<script src="./js/all.min.js"></script>
+	</body>
+</html>
