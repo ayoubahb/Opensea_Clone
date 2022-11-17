@@ -4,15 +4,14 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Oxanium', cursive;
 	background-image: linear-gradient(to right bottom, #173647, #171f47, #783666);
 	background-size: auto;
 	height: 100%;
 	color: white;
-
 }
 
-.navbar-nav li {
+.navbar-nav ul:first-child li {
 	margin-right: 80px;
 }
 
@@ -118,6 +117,12 @@ section {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+.tl {
+	background: linear-gradient(to left, #03a9f4, #009688);
+	width: fit-content;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 .collection-cards {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
@@ -128,7 +133,7 @@ section {
 .collection-cards .col-card {
 	color: white;
 	width: 100%;
-	gap:30px;
+	gap: 30px;
 	padding: 10px;
 	background: rgba(24, 50, 71, 0.7);
 	border-radius: 30px;
@@ -138,6 +143,7 @@ section {
 	color: rgb(255, 255, 255, 0.5);
 	margin-left: 10px;
 }
+
 .profil img {
 	width: 90px;
 	height: 90px;
@@ -152,11 +158,9 @@ section {
 }
 .nfts {
 	gap: 5px;
-	overflow-x: scroll;
 }
 .nfts img {
-	width: 90px;
-	height: 95px;
+	width: 23%;
 	border-radius: 10px;
 }
 .all {
@@ -201,7 +205,7 @@ section {
 }
 
 #formContent {
-	border-radius: 10px 10px 10px 10px;
+	border-radius: 10px;
 	padding: 30px;
 	width: 90%;
 	max-width: 450px;
@@ -225,12 +229,13 @@ section {
 form label {
 	align-self: flex-start;
 }
-
+.account form div,
 #formContent form div {
 	width: 85%;
 	text-align: left;
 	position: relative;
 }
+.account form div svg,
 #formContent form div svg {
 	position: absolute;
 	top: 50%;
@@ -241,8 +246,7 @@ form label {
 	padding: 25px;
 	margin-top: 10px;
 }
-#formContent input[type='text'],
-#formContent input[type='password'] {
+.main-input {
 	border: none;
 	color: #0d0d0d;
 	padding: 15px 40px;
@@ -269,16 +273,38 @@ input[type='text']:placeholder {
 .select-btn {
 	width: 160px;
 }
-.edit button{
+.edit button {
 	background-color: #783666;
 	border: none;
 }
-.edit button:hover{
-	background-color:  #783666;
+.edit button:hover {
+	background-color: #783666;
 	border: none;
 }
-.edit button:first-child{
+.edit button:first-child {
 	background-color: #2757ed;
+}
+
+.account {
+	width: 100%;
+	height: 86.3vh;
+}
+.account form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 500px;
+	width: 90%;
+	background-color: white;
+	padding: 20px;
+	height: 90%;
+	max-height: 700px;
+	border-radius: 10px;
+	color: black;
+}
+.stat {
+	width: 200px;
+	text-align: center;
 }
 @media (max-width: 1200px) {
 	.main .container {
