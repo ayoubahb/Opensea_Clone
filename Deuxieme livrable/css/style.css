@@ -55,7 +55,7 @@ section {
 	font-size: 4rem;
 	letter-spacing: 7px;
 	font-weight: 500;
-	width: 610px;
+	width: 620px;
 	margin-bottom: 60px;
 }
 .cards {
@@ -135,7 +135,11 @@ section {
 	width: 100%;
 	gap: 30px;
 	padding: 10px;
-	background: rgba(24, 50, 71, 0.7);
+	background: rgba(24, 50, 71, 0.29);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+	backdrop-filter: blur(4.9px);
+	border: 1px solid rgba(24, 50, 71, 1);
 	border-radius: 30px;
 }
 .collection-cards h5 span {
@@ -183,7 +187,12 @@ section {
 .nfts-cards .item-card {
 	width: 100%;
 	height: 500px;
-	background-color: #183247;
+	background: rgba(24, 50, 71, 0.29);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+	backdrop-filter: blur(4.9px);
+
+	border: 1px solid rgba(24, 50, 71, 1);
 	color: white;
 	padding: 10px;
 	border-radius: 10px;
@@ -306,6 +315,28 @@ input[type='text']:placeholder {
 	width: 200px;
 	text-align: center;
 }
+
+.home-stat {
+	padding: 10px;
+	background: rgba(24, 50, 71, 0.29);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+	backdrop-filter: blur(4.9px);
+	position: relative;
+	border: 1px solid rgba(24, 50, 71, 1);
+	min-width: 325px;
+}
+.home-stat div:first-child::before {
+	content: '';
+	width: 2px;
+	background: white;
+	height: 70%;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	top: 15%;
+}
 @media (max-width: 1200px) {
 	.main .container {
 		display: block;
@@ -318,5 +349,8 @@ input[type='text']:placeholder {
 		width: 100%;
 		margin: 20px 0;
 		font-size: 50px;
+	}
+	.home-stat{
+		margin: auto;
 	}
 }
