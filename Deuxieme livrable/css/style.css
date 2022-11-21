@@ -155,18 +155,13 @@ section {
 	border: solid 2px white;
 }
 .statics > div {
-	width: 45%;
+	width: calc(100%/3);
+	text-align: center;
 }
 .statics div:first-child > span {
 	color: #28b833;
 }
-.nfts {
-	gap: 5px;
-}
-.nfts img {
-	width: 23%;
-	border-radius: 10px;
-}
+
 .all {
 	margin-top: 1rem;
 	display: flex;
@@ -269,8 +264,9 @@ form label {
 #formContent .main-btn {
 	width: 85%;
 }
-#formContent input[type='text']:focus {
+.main-input:focus {
 	outline: none;
+	box-shadow: none;
 }
 #formContent input[type='text']::placeholder {
 	letter-spacing: 1px;
