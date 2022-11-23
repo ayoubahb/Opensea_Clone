@@ -20,12 +20,15 @@ if(isset($_POST['submit'])){
   $newCol=$_POST['collection'];
 
   $sql="update nfts set name='$newName' ,price='$newPrice', description='$newDes', coll_id='$newCol' where id=$id"; 
-  
-
-  
   $result = mysqli_query($con,$sql);
+
+	$sql1="update collections set num_nfts=num_nfts-1 where id='".$collection."'"; 
+  $result1=mysqli_query($con,$sql1);
+
+	$sql2="update collections set num_nfts=num_nfts+1 where id='".$newCol."'"; 
+  $result2=mysqli_query($con,$sql2);
   
-  if($result){
+  if($result && $result1 && $result2){
     header('location:own-nft.php');
   }else{
     die(mysqli_error($con));

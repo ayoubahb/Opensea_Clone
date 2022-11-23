@@ -118,48 +118,49 @@
 			<div class="container">
 				<div class="collection-cards">
 					<?php
-						$sql="SELECT * FROM collections limit 3";//condition
+						$sql="SELECT collections.name, collections.id, artist.artist_img,collections.num_nfts FROM collections JOIN artist WHERE collections.artist_id = artist.id ORDER BY collections.num_nfts desc limit 3";
           	$result = mysqli_query($con,$sql);
-
 					if($result){
             while($row = mysqli_fetch_assoc($result)){
 							$name=$row['name'];
-							$artistId=$row['artist_id'];
 							$col_id=$row['id'];
+							$artist_img=$row['artist_img'];
+							$num_nfts=$row['num_nfts'];
 							$sql_nft="SELECT * FROM nfts WHERE coll_id ='".$col_id."'";
 							$result_nft=mysqli_query($con,$sql_nft);
 							$total=0;
 							while($row_nft = mysqli_fetch_assoc($result_nft)){
 								$total=$total+$row_nft['price'];
 							}
-							$count_sql='SELECT COUNT(*) AS total FROM nfts WHERE coll_id ="'.$col_id.'"';
-							$r=mysqli_query($con,$count_sql);
-							$value=mysqli_fetch_assoc($r);
-							$count=$value['total'];
 							$moyenne=0;
-							if($count!=0){
-								$moyenne=$total/$count;
+							if($num_nfts!=0){
+								$moyenne=$total/$num_nfts;
 							}
-							echo '<div class="col-card d-flex flex-column justify-content-between">
-											<div class="profil">
-												<img class="me-2" src='.$_SESSION['img'].' alt="" />
-												<span>'.$name.'</span>
+							echo '<div>
+											<div class="col-card d-flex flex-column justify-content-between">
+												<div class="profil">
+													<img class="me-2" src='.$artist_img.' alt="" />
+													<span>'.$name.'</span>
+												</div>
+												<div class="statics d-flex justify-content-between">
+													<div>
+														<p>Total price</p>
+														<h5>'.$total.' ETH</h5>
+													</div>
+													<div>
+														<p>N° NFTs</p>
+														<h5>'.$num_nfts.'</h5>
+													</div>
+													<div>
+														<p>Average price</p>
+														<h5>'.$moyenne.' <span>ETH</span></h5>
+													</div>
+												</div>
+												<div class="nfts d-flex justify-content-between">
+												</div>
 											</div>
-											<div class="statics d-flex justify-content-between">
-												<div>
-													<p>Total price</p>
-													<h5>'.$total.' ETH</h5>
-												</div>
-												<div>
-													<p>N° NFTs</p>
-													<h5>'.$count.'</h5>
-												</div>
-												<div>
-													<p>Average price</p>
-													<h5>'.$moyenne.' <span>ETH</span></h5>
-												</div>
-											</div>
-											<div class="nfts d-flex justify-content-between">
+											<div class="edit mt-3 text-center">
+												<a class="text-light" href="nftofcol.php?colid='.$col_id.'"><button class="btn btn-danger w-25">Explore</button></a>
 											</div>
 										</div>';
 						}
@@ -176,48 +177,49 @@
 			<div class="container">
 				<div class="collection-cards">
 					<?php
-						$sql="SELECT * FROM collections";//condition
+						$sql="SELECT collections.name, collections.id, artist.artist_img,collections.num_nfts FROM collections JOIN artist WHERE collections.artist_id = artist.id";
           	$result = mysqli_query($con,$sql);
-
 					if($result){
             while($row = mysqli_fetch_assoc($result)){
 							$name=$row['name'];
-							$artistId=$row['artist_id'];
 							$col_id=$row['id'];
+							$artist_img=$row['artist_img'];
+							$num_nfts=$row['num_nfts'];
 							$sql_nft="SELECT * FROM nfts WHERE coll_id ='".$col_id."'";
 							$result_nft=mysqli_query($con,$sql_nft);
 							$total=0;
 							while($row_nft = mysqli_fetch_assoc($result_nft)){
 								$total=$total+$row_nft['price'];
 							}
-							$count_sql='SELECT COUNT(*) AS total FROM nfts WHERE coll_id ="'.$col_id.'"';
-							$r=mysqli_query($con,$count_sql);
-							$value=mysqli_fetch_assoc($r);
-							$count=$value['total'];
 							$moyenne=0;
-							if($count!=0){
-								$moyenne=$total/$count;
+							if($num_nfts!=0){
+								$moyenne=$total/$num_nfts;
 							}
-							echo '<div class="col-card d-flex flex-column justify-content-between">
-											<div class="profil">
-												<img class="me-2" src='.$_SESSION['img'].' alt="" />
-												<span>'.$name.'</span>
+							echo '<div>
+											<div class="col-card d-flex flex-column justify-content-between">
+												<div class="profil">
+													<img class="me-2" src='.$artist_img.' alt="" />
+													<span>'.$name.'</span>
+												</div>
+												<div class="statics d-flex justify-content-between">
+													<div>
+														<p>Total price</p>
+														<h5>'.$total.' ETH</h5>
+													</div>
+													<div>
+														<p>N° NFTs</p>
+														<h5>'.$num_nfts.'</h5>
+													</div>
+													<div>
+														<p>Average price</p>
+														<h5>'.$moyenne.' <span>ETH</span></h5>
+													</div>
+												</div>
+												<div class="nfts d-flex justify-content-between">
+												</div>
 											</div>
-											<div class="statics d-flex justify-content-between">
-												<div>
-													<p>Total price</p>
-													<h5>'.$total.' ETH</h5>
-												</div>
-												<div>
-													<p>N° NFTs</p>
-													<h5>'.$count.'</h5>
-												</div>
-												<div>
-													<p>Average price</p>
-													<h5>'.$moyenne.' <span>ETH</span></h5>
-												</div>
-											</div>
-											<div class="nfts d-flex justify-content-between">
+											<div class="edit mt-3 text-center">
+												<a class="text-light" href="nftofcol.php?colid='.$col_id.'"><button class="btn btn-danger w-25">Explore</button></a>
 											</div>
 										</div>';
 						}

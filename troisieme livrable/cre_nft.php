@@ -16,9 +16,12 @@ if(isset($_POST['submit'])){
   $sql="insert into `nfts` (coll_id,name,img,price,description)
   values('$collection','$name','$folder','$price','$description')";
   
+	$sql1="update collections set num_nfts=num_nfts+1 where id=$collection"; 
+
   $result = mysqli_query($con,$sql);
+  $result1 = mysqli_query($con,$sql1);
   
-  if($result){
+  if($result && $result1){ 
     header('location:own-nft.php');
   }else{
     die(mysqli_error($con));

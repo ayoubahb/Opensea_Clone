@@ -124,34 +124,6 @@ if(!isset($_SESSION['id'])){
 					</a>
 				</div>
 				<div class="collection-cards">
-					<!-- <div>
-						<div class="col-card d-flex flex-column justify-content-between">
-							<div class="profil">
-								<img class="me-2" src="./img/nft1.png" alt="" />
-								<span>Compelling Claudette</span>
-							</div>
-							<div class="statics d-flex justify-content-between">
-								<div>
-									<p>Total price</p>
-									<h5>835.6 <span>ETH</span></h5>
-								</div>
-								<div>
-									<p>Average price</p>
-									<h5>62 <span>ETH</span></h5>
-								</div>
-							</div>
-							<div class="nfts d-flex justify-content-between">
-								<img src="./img/nft5.png" alt="" />
-								<img src="./img/nft10.png" alt="" />
-								<img src="./img/nft11.png" alt="" />
-								<img src="./img/nft12.png" alt="" />
-							</div>
-						</div>
-						<div class="edit mt-3 text-center">
-							<button class="btn btn-primary w-25">Edit</button>
-							<button class="btn btn-danger w-25">Delete</button>
-						</div>
-					</div> -->
 						<?php
 						$sql='SELECT * FROM collections WHERE collections.artist_id = "'.$_SESSION['id'].'"';
           	$result = mysqli_query($con,$sql);
@@ -198,6 +170,7 @@ if(!isset($_SESSION['id'])){
 											</div>
 										</div>
 										<div class="edit mt-3 text-center">
+										<a class="text-light" href="nftofcol.php?colid='.$col_id.'"><button class="btn btn-danger w-25">Explore</button></a>
 										<a class="text-light" href="colupdate.php?updateid='.$col_id.'"><button class="btn btn-danger w-25">Edit</button></a>
 										<a class="text-light" href="coldelete.php?deleteid='.$col_id.'"><button class="btn btn-danger w-25">Delete</button></a>
 									</div>

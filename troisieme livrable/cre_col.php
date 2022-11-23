@@ -5,8 +5,8 @@ if(isset($_POST['submit'])){
   $name=$_POST['name'];
   $artistId= $_SESSION['id'];
 
-  $sql="insert into `collections` (name,artist_id)
-  values('$name','$artistId')";
+  $sql="insert into `collections` (name,artist_id,num_nfts)
+  values('$name','$artistId',0)";
   
   $result = mysqli_query($con,$sql);
   
