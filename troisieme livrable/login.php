@@ -2,15 +2,9 @@
 session_start();
 include "connect.php";
 	if(isset($_POST['email']) && isset($_POST['password'])){
-		function valid($data){
-      $data =trim($data);
-      $data =stripcslashes($data);
-      $data =htmlspecialchars($data);
-      return $data ;
-    }
-  
-    $email = valid($_POST['email']);
-    $psw = valid($_POST['password']);
+    
+    $email = $_POST['email'];
+    $psw = $_POST['password'];
 
     if(empty($email)){
       header("location: login_page.php?error=Email required");

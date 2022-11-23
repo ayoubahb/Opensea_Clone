@@ -27,7 +27,7 @@ if(!isset($_SESSION['id'])){
 	<body>
 		<nav class="navbar navbar-expand-lg sticky-top">
 			<div class="container">
-				<a class="logo me-5" href=""><img src="./img/logo.png" alt="" /></a>
+				<a class="logo me-5" href="home.php"><img src="./img/logo.png" alt="" /></a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -201,14 +201,14 @@ if(!isset($_SESSION['id'])){
 						<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 							<h6 class="text-uppercase fw-bold mb-4">Collections</h6>
 							<p>
-								<a href="#!" class="text-reset">All collections</a>
+								<a href="collection.php" class="text-reset">All collections</a>
 							</p>
 						</div>
 
 						<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 							<h6 class="text-uppercase fw-bold mb-4">NFTs</h6>
 							<p>
-								<a href="#!" class="text-reset">All NFTs</a>
+								<a href="nfts.php" class="text-reset">All NFTs</a>
 							</p>
 						</div>
 

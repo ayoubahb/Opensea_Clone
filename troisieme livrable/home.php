@@ -117,7 +117,7 @@ include 'connect.php';
 			<div class="container">
 				<div>
 					<h1>A New Place to Collect and Connect NFT Across the World</h1>
-					<button class="main-btn">Get started</button>
+					<a href="login_page.php"><button class="main-btn">Get started</button></a>
 				</div>
 				<div class="cards d-none d-xl-block">
 					<div class="item-card d-flex flex-column justify-content-between">
@@ -200,7 +200,7 @@ include 'connect.php';
 							}
 							$moyenne=0;
 							if($num_nfts!=0){
-								$moyenne=$total/$num_nfts;
+								$moyenne=round($total/$num_nfts);
 							}
 							echo '<div>
 											<div class="col-card d-flex flex-column justify-content-between">
@@ -324,14 +324,14 @@ include 'connect.php';
 						<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 							<h6 class="text-uppercase fw-bold mb-4">Collections</h6>
 							<p>
-								<a href="#!" class="text-reset">All collections</a>
+								<a href="collection.php" class="text-reset">All collections</a>
 							</p>
 						</div>
 
 						<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 							<h6 class="text-uppercase fw-bold mb-4">NFTs</h6>
 							<p>
-								<a href="#!" class="text-reset">All NFTs</a>
+								<a href="nfts.php" class="text-reset">All NFTs</a>
 							</p>
 						</div>
 
